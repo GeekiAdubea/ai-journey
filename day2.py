@@ -59,3 +59,14 @@ num = [6,7,8,9,3,16,45,86,65,364]
 
 result = summarise(num)
 print(result)
+
+import csv
+
+def read_csv(path):
+    with open(path, newline="") as f:
+        reader=csv.DictReader(f)
+        return list(reader)
+
+rows = read_csv("score.csv")
+print(rows)
+print(rows[0]["name"])
